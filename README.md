@@ -198,7 +198,7 @@ You can use HTML blocks between `===` to render actual HTML and inline JavaScrip
 ===
 <script>
     let span = document.getElementById('myspan')
-    span.innerText = 'dynamic text.'
+    span.innerText = 'dynamic text'
 </script>
 ===
 This is some static text.
@@ -209,7 +209,7 @@ This is some static text.
 ```html
 <script>
     let span = document.getElementById('myspan')
-    span.innerText = 'dynamic text.'
+    span.innerText = 'dynamic text'
 </script>
 <p class="marq-p">This is some static text.</p>
 <p>This is some <span id="myspan"></span>.</p>
