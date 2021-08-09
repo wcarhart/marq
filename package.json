@@ -1,6 +1,6 @@
 {
   "name": "@wcarhart/marq",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": "https://github.com/wcarhart/marq",
   "author": "Will Carhart <carhartwill@gmail.com>",

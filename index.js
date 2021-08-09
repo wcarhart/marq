@@ -310,9 +310,9 @@ class Marq {
 			let href = match.replace(/^.*\(/, '').replace(/\)$/, '')
 			let html = ''
 			if (/\{\{src:.*\}\}/.exec(match) || /\{\{sys:home\}\}/.exec(match)) {
-				html = `<a class="${this.cssPrefix}link${this.cssSuffix}" href="${href}">${anchor}</a>`
+				html = `<a class="${this.cssPrefix}fancy-link${this.cssSuffix}" href="${href}">${anchor}</a>`
 			} else {
-				html = `<a class="${this.cssPrefix}link${this.cssSuffix}" href="${href}" target="_blank">${anchor}</a>`
+				html = `<a class="${this.cssPrefix}fancy-link${this.cssSuffix}" href="${href}" target="_blank">${anchor}</a>`
 			}
 			subcomponent = subcomponent.replace(match, html)
 		}
