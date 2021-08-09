@@ -288,7 +288,10 @@ Create a horizontal rule with `---` or `___`.
 #### Empty Lines
 Use empty lines to add whitespace to your HTML.
 ```
-Here is some top text.\n\n\nHere is some bottom text.
+Here is some top text.
+
+
+Here is some bottom text.
 ```
 ```html
 <p class="marq-p">Here is some top text.</p>
