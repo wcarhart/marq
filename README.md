@@ -84,7 +84,7 @@ A preliminary CSS and JS files are provided to showcase some styling options, bu
 Marq supports a wide variety of markdown structures, initially inspired by [GFM](https://github.github.com/gfm/) (_note: most GFM .md files will work with marq_). Keep in mind that these examples are HTML structures only (see the `css/` and `js/` directories for some styling samples).
 
 #### Titles
-Titles `h1` through `h6` start with a `#`.
+Titles `h1` through `h6` start with a `#`. Titles can use inline text decoration.
 ```
 # This is an h1
 ### This is an h3
@@ -97,7 +97,7 @@ Titles `h1` through `h6` start with a `#`.
 ```
 
 #### Shoutouts
-Shoutouts are an addition to [GFM](https://github.github.com/gfm) and are a cool way to call attention to something in an article or blog post.
+Shoutouts are an addition to [GFM](https://github.github.com/gfm) and are a cool way to call attention to something in an article or blog post. Shoutout text can use inline text decoration.
 ```
 >> Help! | Can you please help me by subscribing to my new email list? It would be much appreciated!
 ```
@@ -109,7 +109,7 @@ Shoutouts are an addition to [GFM](https://github.github.com/gfm) and are a cool
 ```
 
 #### Paragraph Text
-Regular text is rendered as paragraph `<p>` text. One notable difference is consecutive newlines not separated by a line break are not concatenated to the same line, which is different from [GFM](https://github.github.com/gfm).
+Regular text is rendered as paragraph `<p>` text. One notable difference is consecutive newlines not separated by a line break are not concatenated to the same line, which is different from [GFM](https://github.github.com/gfm). Paragraph text can use inline text decoration.
 ```
 Here is some text.
 Here is some more text, not on the same line.
@@ -130,14 +130,14 @@ Here is some **bold and _italicized_ text**.
 ```
 ```html
 <p class="marq-p">This text is <code class="marq-inline-code">inline code</code>.</p>
-<p class="marq-p">This text is <b class="marq-bold-text">bold</b>.</p>
-<p class="marq-p">This text is <i>italicized</i>.</p>
-<p class="marq-p">This text is <s>struck through</s>.</p>
-<p class="marq-p">Here is some <b class="marq-bold-text">bold and <i>italicized</i> text</b>.</p>
+<p class="marq-p">This text is <b class="marq-b">bold</b>.</p>
+<p class="marq-p">This text is <i class="marq-i">italicized</i>.</p>
+<p class="marq-p">This text is <s class="marq-s">struck through</s>.</p>
+<p class="marq-p">Here is some <b class="marq-b">bold and <i class="marq-i">italicized</i> text</b>.</p>
 ```
 
 #### Unordered Lists
-Unordered lists start with `* ` and must be followed by an empty new line.  _Note: nested lists are not currently supported._
+Unordered lists start with `* ` and must be followed by an empty new line. List items can use inline text decoration. _Note: nested lists are not currently supported._
 ```
 This week's groceries:
 * bananas
@@ -155,7 +155,7 @@ This week's groceries:
 ```
 
 #### Ordered Lists
-Ordered lists start with a number and must be followed by an empty new line. The list can start with any integer. _Note: nested lists are not currently supported._
+Ordered lists start with a number and must be followed by an empty new line. The list can start with any integer. List items can use inline text decoration. _Note: nested lists are not currently supported._
 ```
 Chores, continued from last week:
 2. Mow lawn
@@ -234,7 +234,7 @@ def say_hello():
 ```
 
 #### Blockquotes
-Blockquotes are an HTML structure used to indicate that a longer portion of text is quoted from another source. Start a line with `>` to utilize them with marq.
+Blockquotes are an HTML structure used to indicate that a longer portion of text is quoted from another source. Start a line with `>` to utilize them with marq. Blockquote text can use inline text decoration.
 ```
 > www.google.com | This is a blockquote with an optional source to cite.
 > This is a blockquote without a source.
@@ -268,7 +268,7 @@ See our product in action below:
 ```
 
 #### Centered Text
-Ever wanted to center a piece of text in markdown? Now you can. Start a line with `=` for it to be centered (requires additional CSS, see the `css/` directory for samples).
+Ever wanted to center a piece of text in markdown? Now you can. Start a line with `=` for it to be centered (requires additional CSS, see the `css/` directory for samples). Centered text can use inline text decoration.
 ```
 =This text is centered.
 ```
@@ -327,7 +327,7 @@ Marq supports complex table structures with nested inline text decoration. Start
             <td class="table-align-right"> </td>
         </tr>
         <tr class="">
-            <td class="table-align-left">Cells support <code class="marq-inline-code">inline</code> <b class="marq-bold-text">text</b> <i>decoration</i>.</td>
+            <td class="table-align-left">Cells support <code class="marq-inline-code">inline</code> <b class="marq-b">text</b> <i class="marq-i">decoration</i>.</td>
             <td class="table-align-center"> </td>
             <td class="table-align-right"> </td>
         </tr>

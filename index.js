@@ -335,7 +335,7 @@ class Marq {
 			let endChar = match[match.length - 1]
 			let cleansedMatch = match.substring(1, match.length - 2)
 			let italics = cleansedMatch.replace(/^_/, '').replace(/_$/, '')
-			subcomponent = subcomponent.replace(match, `${startChar}<i>${italics}</i>${endChar}`)
+			subcomponent = subcomponent.replace(match, `${startChar}<i class="{{marq-prefix}}i{{marq-suffix}}{{marq-class}}"{{marq-id}}>${italics}</i>${endChar}`)
 		}
 		// start of string
 		while (/^_.+?_[^A-Za-z0-9"'`]/.exec(subcomponent)) {
@@ -343,7 +343,7 @@ class Marq {
 			let endChar = match[match.length - 1]
 			let cleansedMatch = match.substring(0, match.length - 2)
 			let italics = cleansedMatch.replace(/^_/, '').replace(/_$/, '')
-			subcomponent = subcomponent.replace(match, `<i>${italics}</i>${endChar}`)
+			subcomponent = subcomponent.replace(match, `<i class="{{marq-prefix}}i{{marq-suffix}}{{marq-class}}"{{marq-id}}>${italics}</i>${endChar}`)
 		}
 		// end of string
 		while (/[^A-Za-z0-9"'`]_.+?_$/.exec(subcomponent)) {
@@ -351,13 +351,13 @@ class Marq {
 			let startChar = match[0]
 			let cleansedMatch = match.substring(1, match.length - 1)
 			let italics = cleansedMatch.replace(/^_/, '').replace(/_$/, '')
-			subcomponent = subcomponent.replace(match, `${startChar}<i>${italics}</i>`)
+			subcomponent = subcomponent.replace(match, `${startChar}<i class="{{marq-prefix}}i{{marq-suffix}}{{marq-class}}"{{marq-id}}>${italics}</i>`)
 		}
 		// whole string
 		while (/^_.+?_$/.exec(subcomponent)) {
 			let match = /^_.+?_$/.exec(subcomponent)[0]
 			let italics = match.replace(/^_/, '').replace(/_$/, '')
-			subcomponent = subcomponent.replace(match, `<i>${italics}</i>`)
+			subcomponent = subcomponent.replace(match, `<i class="{{marq-prefix}}i{{marq-suffix}}{{marq-class}}"{{marq-id}}>${italics}</i>`)
 		}
 
 		// handle bold: **...**
@@ -368,7 +368,7 @@ class Marq {
 			let endChar = match[match.length - 1]
 			let cleansedMatch = match.substring(1, match.length - 3)
 			let bold = cleansedMatch.replace(/^\*\*/, '').replace(/\*\*$/, '')
-			subcomponent = subcomponent.replace(match, `${startChar}<b class="${this.cssPrefix}bold-text${this.cssSuffix}">${bold}</b>${endChar}`)
+			subcomponent = subcomponent.replace(match, `${startChar}<b class="{{marq-prefix}}b{{marq-suffix}}{{marq-class}}"{{marq-id}}>${bold}</b>${endChar}`)
 		}
 		// start of string
 		while (/^\*\*.+?\*\*[^A-Za-z0-9"'`]/.exec(subcomponent)) {
@@ -376,7 +376,7 @@ class Marq {
 			let endChar = match[match.length - 1]
 			let cleansedMatch = match.substring(0, match.length - 3)
 			let bold = cleansedMatch.replace(/^\*\*/, '').replace(/\*\*$/, '')
-			subcomponent = subcomponent.replace(match, `<b class="${this.cssPrefix}bold-text${this.cssSuffix}">${bold}</b>${endChar}`)
+			subcomponent = subcomponent.replace(match, `<b class="{{marq-prefix}}b{{marq-suffix}}{{marq-class}}"{{marq-id}}>${bold}</b>${endChar}`)
 		}
 		// end of string
 		while (/[^A-Za-z0-9"'`]\*\*.+?\*\*$/.exec(subcomponent)) {
@@ -384,13 +384,13 @@ class Marq {
 			let startChar = match[0]
 			let cleansedMatch = match.substring(1, match.length - 2)
 			let bold = cleansedMatch.replace(/^\*\*/, '').replace(/\*\*$/, '')
-			subcomponent = subcomponent.replace(match, `${startChar}<b class="${this.cssPrefix}bold-text${this.cssSuffix}">${bold}</b>`)
+			subcomponent = subcomponent.replace(match, `${startChar}<b class="{{marq-prefix}}b{{marq-suffix}}{{marq-class}}"{{marq-id}}>${bold}</b>`)
 		}
 		// whole string
 		while (/^\*\*.+?\*\*$/.exec(subcomponent)) {
 			let match = /^\*\*.+?\*\*$/.exec(subcomponent)[0]
 			let bold = match.replace(/^\*\*/, '').replace(/\*\*$/, '')
-			subcomponent = subcomponent.replace(match, `<b class="${this.cssPrefix}bold-text${this.cssSuffix}">${bold}</b>`)
+			subcomponent = subcomponent.replace(match, `<b class="{{marq-prefix}}b{{marq-suffix}}{{marq-class}}"{{marq-id}}>${bold}</b>`)
 		}
 
 		// handle strikethrough: ~~...~~
@@ -401,7 +401,7 @@ class Marq {
 			let endChar = match[match.length - 1]
 			let cleansedMatch = match.substring(1, match.length - 3)
 			let strikethrough = cleansedMatch.replace(/^~~/, '').replace(/~~$/, '')
-			subcomponent = subcomponent.replace(match, `${startChar}<s>${strikethrough}</s>${endChar}`)
+			subcomponent = subcomponent.replace(match, `${startChar}<s class="{{marq-prefix}}s{{marq-suffix}}{{marq-class}}"{{marq-id}}>${strikethrough}</s>${endChar}`)
 		}
 		// start of string
 		while (/^~~.+?~~[^A-Za-z0-9"'`]/.exec(subcomponent)) {
@@ -409,7 +409,7 @@ class Marq {
 			let endChar = match[match.length - 1]
 			let cleansedMatch = match.substring(0, match.length - 3)
 			let strikethrough = cleansedMatch.replace(/^~~/, '').replace(/~~$/, '')
-			subcomponent = subcomponent.replace(match, `<s>${strikethrough}</s>${endChar}`)
+			subcomponent = subcomponent.replace(match, `<s class="{{marq-prefix}}s{{marq-suffix}}{{marq-class}}"{{marq-id}}>${strikethrough}</s>${endChar}`)
 		}
 		// end of string
 		while (/[^A-Za-z0-9"'`]~~.+?~~$/.exec(subcomponent)) {
@@ -417,13 +417,13 @@ class Marq {
 			let startChar = match[0]
 			let cleansedMatch = match.substring(1, match.length - 2)
 			let strikethrough = cleansedMatch.replace(/^~~/, '').replace(/~~$/, '')
-			subcomponent = subcomponent.replace(match, `${startChar}<s>${strikethrough}</s>`)
+			subcomponent = subcomponent.replace(match, `${startChar}<s class="{{marq-prefix}}s{{marq-suffix}}{{marq-class}}"{{marq-id}}>${strikethrough}</s>`)
 		}
 		// whole string
 		while (/^~~.+?~~$/.exec(subcomponent)) {
 			let match = /^~~.+?~~$/.exec(subcomponent)[0]
 			let strikethrough = match.replace(/^~~/, '').replace(/~~$/, '')
-			subcomponent = subcomponent.replace(match, `<s>${strikethrough}</s>`)
+			subcomponent = subcomponent.replace(match, `<s class="{{marq-prefix}}s{{marq-suffix}}{{marq-class}}"{{marq-id}}>${strikethrough}</s>`)
 		}
 
 		return subcomponent
